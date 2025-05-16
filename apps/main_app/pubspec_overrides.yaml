@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: auth,core,home,profile
+dependency_overrides:
+  auth:
+    path: ../../packages/features/auth
+  core:
+    path: ../../packages/core
+  home:
+    path: ../../packages/features/home
+  profile:
+    path: ../../packages/features/profile
