@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:main_app/app.dart';
 import 'package:core/core.dart' as core;
 import 'package:auth/auth.dart' as auth;
 import 'package:home/home.dart' as home;
 import 'package:profile/profile.dart' as profile;
+import 'package:main_app/app.dart';
 import 'package:main_app/di/injector.dart';
+
+void microPackageInit() {
+  // 의존성 주입 설정
+  configureAppDependencies();
+
+  // 추가적인 초기화 작업 수행
+  print('Main app initialized');
+}
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,10 +22,7 @@ void main() {
   auth.microPackageInit();
   home.microPackageInit();
   profile.microPackageInit();
-
-  // 메인 앱 초기화
-  configureAppDependencies();
-  print('Main app initialized');
+  microPackageInit();
 
   runApp(const MyApp());
 }
