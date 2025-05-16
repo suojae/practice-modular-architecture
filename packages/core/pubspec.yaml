@@ -11,6 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # 라우터 모듈 의존성 추가
+  router:
+    path: ../router
+
   # Dependency Injection
   injectable: ^2.3.2
   get_it: ^7.6.7

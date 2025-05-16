@@ -21,6 +21,8 @@ dependencies:
     path: ../../packages/features/home
   profile:
     path: ../../packages/features/profile
+  router:
+    path: ../../packages/router
 
   # Dependency Injection
   injectable: ^2.3.2

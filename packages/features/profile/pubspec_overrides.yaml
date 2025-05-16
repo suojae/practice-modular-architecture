@@ -1,4 +1,10 @@
-# melos_managed_dependency_overrides: core
+# melos_managed_dependency_overrides: core,auth,home,router
 dependency_overrides:
   core:
     path: ../../core
+  auth:
+    path: ../auth
+  home:
+    path: ../home
+  router:
+    path: ../../router
