@@ -1,6 +1,7 @@
 import 'package:auth/services/auth_service.dart';
 import 'package:core/di/injector.dart';
 import 'package:flutter/material.dart';
+import 'package:router/router.dart';
 
 /**
  * 로그인 화면 위젯
@@ -28,8 +29,9 @@ class _LoginScreenState extends State<LoginScreen> {
   // 비밀번호 입력을 위한 컨트롤러
   final _passwordController = TextEditingController();
 
-  // 의존성 주입을 통해 AuthService 인스턴스 가져오기
+  // 의존성 주입을 통해 서비스 인스턴스 가져오기
   final _authService = getIt<AuthService>();
+  final _routerService = getIt<RouterService>();
 
   // 로딩 상태 관리
   bool _isLoading = false;
@@ -92,8 +94,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
     // 로그인 결과에 따른 처리
     if (success && mounted) {
-      // 성공 시 홈 화면으로 이동
-      Navigator.of(context).pushReplacementNamed('/home');
+      // 성공 시 홈 화면으로 이동 (RouterService 사용)
+      _routerService.goToHome(context);
     } else if (mounted) {
       // 실패 시 오류 메시지 표시
       ScaffoldMessenger.of(

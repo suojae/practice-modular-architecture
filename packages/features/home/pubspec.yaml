@@ -14,6 +14,8 @@ dependencies:
   # 모듈 의존성
   core:
     path: ../../core
+  router:
+    path: ../../router
 
   # Dependency Injection
   injectable: ^2.3.2

@@ -1,6 +1,7 @@
 import 'package:core/di/injector.dart';
 import 'package:flutter/material.dart';
 import 'package:home/services/home_service.dart';
+import 'package:router/router.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final _homeService = getIt<HomeService>();
+  final _routerService = getIt<RouterService>();
   List<String> _items = [];
   bool _isLoading = true;
 
@@ -42,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.person),
             onPressed: () {
-              Navigator.of(context).pushNamed('/profile');
+              _routerService.goToProfile(context);
             },
           ),
         ],
