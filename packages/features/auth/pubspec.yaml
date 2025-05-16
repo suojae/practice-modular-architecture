@@ -15,6 +15,9 @@ dependencies:
   core:
     path: ../../core
 
+  # 라우팅 라이브러리
+  go_router: ^12.1.1
+
   # Dependency Injection
   injectable: ^2.3.2
   get_it: ^7.6.7

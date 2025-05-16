@@ -462,7 +462,7 @@ packages:
     source: hosted
     version: "4.1.0"
   router:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../../router"
       relative: true
